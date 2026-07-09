@@ -27,8 +27,10 @@
     document.body.appendChild(a);
   }
 
+  // Se coloca por ENCIMA del boton de subir (.progress-wrap: right:30 bottom:30, 46px)
+  // para que no se empalmen.
   var css =
-    "#wa-float-btn{position:fixed;right:20px;bottom:20px;z-index:99999;" +
+    "#wa-float-btn{position:fixed;right:23px;bottom:88px;z-index:99999;" +
     "display:flex;align-items:center;justify-content:center;width:60px;height:60px;" +
     "border-radius:50%;background:#25D366;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.25);" +
     "transition:transform .2s ease,box-shadow .2s ease;text-decoration:none;" +
@@ -38,8 +40,8 @@
     "@keyframes waFloatPulse{0%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.5);}" +
     "70%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 16px rgba(37,211,102,0);}" +
     "100%{box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,0);}}" +
-    "@media (max-width:576px){#wa-float-btn{right:16px;bottom:16px;width:54px;height:54px;}" +
-    "#wa-float-btn svg{width:28px;height:28px;}}";
+    "@media (max-width:576px){#wa-float-btn{right:18px;bottom:82px;width:52px;height:52px;}" +
+    "#wa-float-btn svg{width:27px;height:27px;}}";
 
   var style = document.createElement("style");
   style.id = "wa-float-style";
