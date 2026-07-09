@@ -28390,3 +28390,19 @@ body.servi-ce-details .rts-footer-two-area {
   color: #e74c3c;
 }
 
+
+/*=== Scroll nativo en dispositivos tactiles (evita que ScrollSmoother bloquee el scroll en movil) ===*/
+html.is-touch-native-scroll,
+html.is-touch-native-scroll body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+html.is-touch-native-scroll #smooth-wrapper,
+html.is-touch-native-scroll #smooth-content {
+  position: static !important;
+  height: auto !important;
+  overflow: visible !important;
+  transform: none !important;
+}

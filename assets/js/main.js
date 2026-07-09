@@ -1760,7 +1760,16 @@
 
             gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-            const scrollMain = ScrollSmoother.create(); // global scroll
+            // ScrollSmoother (scroll suavizado por JS) rompe el scroll tactil en
+            // moviles/tablets (sobre todo en iOS Safari). Se activa solo en
+            // dispositivos sin pantalla tactil; en tactiles se usa el scroll
+            // nativo del navegador para que la pagina siempre se pueda desplazar.
+            let scrollMain;
+            if (ScrollTrigger.isTouch === 0) {
+                scrollMain = ScrollSmoother.create(); // global scroll (solo escritorio)
+            } else {
+                document.documentElement.classList.add("is-touch-native-scroll");
+            }
             const wrapper = document.querySelector(".scroller-wrapper"); // slider wrapper
             const scroller = wrapper.querySelector(".scroller"); // slider scroller
             const timelines = []; // gsap stuff storage for cleanup
